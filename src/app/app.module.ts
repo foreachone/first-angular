@@ -13,6 +13,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
 import { SlotComponent } from './slot/slot.component';
 import { SlotBasicComponent } from './slot-basic/slot-basic.component';
+import { AdComponent } from './ad/ad.component';
+import { AdBannerComponent } from './ad/ad-banner.component';
+import { ProfileComponent } from './ad/profile.component';
+import { JobComponent } from './ad/job.component';
+import { AdDirective } from './ad/ad.directive';
+import { AdService } from './ad/ad.service';
 
 @NgModule({
   imports: [
@@ -25,8 +31,10 @@ import { SlotBasicComponent } from './slot-basic/slot-basic.component';
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
       { path: 'slot', component: SlotComponent },
+      { path: 'ad', component: AdComponent }
     ]),
   ],
+  providers: [AdService],
   declarations: [
     AppComponent,
     TopBarComponent,
@@ -37,6 +45,11 @@ import { SlotBasicComponent } from './slot-basic/slot-basic.component';
     ShippingComponent,
     SlotComponent,
     SlotBasicComponent,
+    AdComponent,
+    AdBannerComponent,
+    ProfileComponent,
+    JobComponent,
+    AdDirective
   ],
   bootstrap: [AppComponent],
 })
