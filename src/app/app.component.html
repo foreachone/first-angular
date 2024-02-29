@@ -2,6 +2,22 @@
 
 <div class="container">
   <router-outlet></router-outlet>
+  way1
+  <app-sizer [(size)]="fontSizePx"></app-sizer>
+  <div [style.font-size.px]="fontSizePx">Resizable Text</div>
+  <label>font szie</label> <input [(ngModel)]="fontSizePx"/>
+  way2
+  <app-sizer [size]="fontSizePx" (sizeChange)="fontSizePx=$event"></app-sizer>
+
+
+  <div>
+    <div>{{ dataValue }}</div>
+    <br>
+    <input [value]="dataValue">
+    <br>
+    <input [(ngModel)]="dataValue" />
+    <br>
+  </div>
 </div>
 
 <!-- 
