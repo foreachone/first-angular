@@ -20,6 +20,7 @@ import { JobComponent } from './ad/job.component';
 import { AdDirective } from './ad/ad.directive';
 import { AdService } from './ad/ad.service';
 import { SizerComponent } from './sizer/sizer.component';
+import { CheapProductsPipe, ExpensiveProductsPipe, FetchShippingPipe } from './products.pipe';
 
 @NgModule({
   imports: [
@@ -53,6 +54,9 @@ import { SizerComponent } from './sizer/sizer.component';
     JobComponent,
     AdDirective,
     SizerComponent,
+    CheapProductsPipe,
+    ExpensiveProductsPipe,
+    FetchShippingPipe
   ],
   bootstrap: [AppComponent],
 })

@@ -14,6 +14,16 @@
 
   <app-product-alerts [product]="product" (notify)="onNotify()" #child>
   </app-product-alerts>
+
+</div>
+<div>
+  <h2>Shipping from JSON file</h2>
+  <div *ngFor="let shipping of ('assets/shipping.json' | fetchShipping)">
+    {{ shipping.type }}
+  </div>
+  <!-- <p>Shipping as JSON:
+    {{'assets/shipping.json' | fetchShipping | json}}
+  </p> -->
 </div>
 <!-- 
 Copyright Google LLC. All Rights Reserved.

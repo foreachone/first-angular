@@ -5,7 +5,7 @@
   way1
   <app-sizer [(size)]="fontSizePx"></app-sizer>
   <div [style.font-size.px]="fontSizePx">Resizable Text</div>
-  <label>font szie</label> <input [(ngModel)]="fontSizePx"/>
+  <label>font szie</label> <input [(ngModel)]="fontSizePx" />
   way2
   <app-sizer [size]="fontSizePx" (sizeChange)="fontSizePx=$event"></app-sizer>
 
@@ -19,6 +19,37 @@
     <br>
   </div>
 </div>
+
+<div>
+  <h2>{{ title }}</h2>
+  <p>Create a new product and press enter to add it to the list. </p>
+  <label for="product-name">New product name: </label>
+  <input 
+    type="text" 
+    #box 
+    id="product-name" 
+    (keyup.enter)="addProduct(box.value); box.value=''" 
+    placeholder="product name">
+  <div>
+    <input id="price" type="text" [(ngModel)]="price">
+    <label for="price">Price</label>
+  </div>
+
+  <h3>All Products without pipe</h3>
+  <div *ngFor="let product of products">
+    {{ product.name }}
+  </div>
+  <h3>Cheap Products(pure pipe)</h3>
+  <div *ngFor="let product of (products | cheapProducts)">
+    {{ product.name }}
+  </div>
+  <h3>Expensive Products(impure pipe)</h3>
+  <div *ngFor="let product of (products | expensiveProducts)">
+    {{ product.name }}
+  </div>
+</div>
+
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
